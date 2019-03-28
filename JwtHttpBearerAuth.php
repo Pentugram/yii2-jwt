@@ -112,4 +112,5 @@ class JwtHttpBearerAuth extends AuthMethod
     {
         return $this->jwt->loadToken($token);
     }
+
 }

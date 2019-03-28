@@ -110,7 +110,10 @@ class Jwt extends Component
     {
         $data = $this->getValidationData($currentTime);
         // @todo Add claims for validation
-
+        if($token->isExpired)
+        {
+            throw new InvalidArgumentException('expired');
+        }
         return $token->validate($data);
     }
 
